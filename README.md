@@ -1,54 +1,65 @@
 # WebScrapping
 Projeto de WebScrapping utilizando o site AdoroCinema
 
-# 🎬 Web Scraping - AdoroCinema
+# 🎬 Web Scraping - Críticas de Filmes (AdoroCinema)
 
-Este projeto é um **script de Web Scraping em Python** que coleta informações detalhadas sobre filmes listados na página de críticas do site [AdoroCinema](https://www.adorocinema.com/filmes/criticas-filmes/).
+Este projeto realiza **web scraping** no site [AdoroCinema](https://www.adorocinema.com/filmes/criticas-filmes/) para extrair informações detalhadas de filmes recentemente avaliados, e organiza esses dados em uma estrutura de **DataFrame** com o auxílio da biblioteca `pandas`.
 
 ---
 
 ## 🎯 Objetivo
 
-Automatizar a extração de dados dos filmes mais recentes avaliados no AdoroCinema, capturando:
+Extrair de forma automatizada informações importantes de filmes diretamente do site AdoroCinema, incluindo:
 
-- 🎬 Título do filme  
+- 🎬 Título  
 - 🎥 Direção  
-- 👨‍🎤 Elenco  
+- 👥 Elenco  
 - 🗓️ Data de lançamento  
-- 🧭 Meio de lançamento (cinema, streaming etc.)  
-- ⭐ Nota da crítica (redação)
+- 📺 Meio de lançamento (cinema, streaming etc.)  
+- ⭐ Nota da crítica (redação do site)
+
+Esses dados são organizados em um `DataFrame` para futura análise, exportação ou visualização.
 
 ---
 
-## ⚙️ Como Funciona
+## ⚙️ Como o Código Funciona
 
-1. Acessa a página de críticas do site AdoroCinema.
-2. Identifica e coleta os blocos HTML com informações dos filmes.
-3. Acessa individualmente a página de cada filme para coletar dados detalhados.
-4. Faz o parsing e extração de informações com **BeautifulSoup**.
-5. Exibe os dados no terminal e os armazena em uma lista de dicionários para uso futuro.
+1. **Requisição HTTP**: Usa `requests` para acessar a página principal de críticas de filmes.
+2. **Parsing HTML**: Com `BeautifulSoup`, localiza os blocos de HTML contendo os filmes.
+3. **Extração de links individuais**: Para cada filme listado, acessa a página detalhada.
+4. **Coleta de dados**: Extrai dados como direção, elenco, data de estreia, meio de lançamento e nota.
+5. **Armazenamento**: Os dados são guardados em uma lista de dicionários (`lista_filmes`).
+6. **Criação de DataFrame**: Utiliza `pandas` para transformar os dados em um `DataFrame` organizado.
+7. **Exibição**: Mostra o conteúdo no terminal, pronto para ser exportado para `.csv`, `.json` ou processado.
 
 ---
 
-## 🧰 Tecnologias Utilizadas
+## 🧰 Bibliotecas Utilizadas
 
-- [`requests`](https://pypi.org/project/requests/) – Requisições HTTP para obter o conteúdo das páginas.  
-- [`BeautifulSoup`](https://pypi.org/project/beautifulsoup4/) (bs4) – Parsing do HTML e extração de dados.
+- [`requests`](https://pypi.org/project/requests/): Para fazer requisições HTTP.  
+- [`BeautifulSoup`](https://pypi.org/project/beautifulsoup4/): Para fazer o parsing e navegação no HTML.  
+- [`pandas`](https://pandas.pydata.org/): Para criar e manipular tabelas (DataFrames) com os dados coletados.
+
+---
+
+## 📌 Resultados Esperados
+
+Ao rodar o script, o terminal exibirá:
+- Informações detalhadas de cada filme listado.
+- Um `DataFrame` estruturado com todos os dados organizados.
 
 ---
 
 ## 📦 Possíveis Expansões
 
-- Salvar os dados em `.csv`, `.json` ou banco de dados.
-- Criar uma interface gráfica ou API para visualizar os filmes.
-- Adicionar controle de erros e `sleep()` para evitar sobrecarregar o servidor.
+- Exportar os dados para um arquivo `.csv` ou `.json`.
+- Criar uma interface interativa com gráficos usando `streamlit` ou `dash`.
+- Agendar a coleta automática com `cron` ou `task scheduler`.
 
 ---
 
-## ⚠️ Aviso
+## ⚠️ Observação
 
-Este projeto é apenas para fins **educacionais**. Ao realizar web scraping, sempre consulte os **termos de uso** do site e evite sobrecarregar os servidores com requisições automáticas frequentes.
+Este projeto é educacional. Sempre respeite os [termos de uso](https://www.adorocinema.com/) do site ao utilizar web scraping. Evite fazer muitas requisições em curto intervalo de tempo para não sobrecarregar os servidores.
 
 ---
-
-
