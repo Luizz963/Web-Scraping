@@ -132,3 +132,8 @@ for filme in filmes:
 # Itera sobre a lista de filmes coletados e imprime os dados de cada um
 for item in lista_filmes:
     print(item)
+
+import pandas as pd
+
+df = pd.DataFrame(lista_filmes) # Cria o dataframe de lista_filmes
+print(df)
