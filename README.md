@@ -57,9 +57,3 @@ Ao rodar o script, o terminal exibirá:
 - Agendar a coleta automática com `cron` ou `task scheduler`.
 
 ---
-
-## ⚠️ Observação
-
-Este projeto é educacional. Sempre respeite os [termos de uso](https://www.adorocinema.com/) do site ao utilizar web scraping. Evite fazer muitas requisições em curto intervalo de tempo para não sobrecarregar os servidores.
-
----
