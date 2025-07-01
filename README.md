@@ -1,5 +1,5 @@
-# WebScrapping
-Projeto de WebScrapping utilizando o site AdoroCinema
+# Web Scraping
+Projeto de Web Scraping utilizando o site AdoroCinema
 
 # 🎬 Web Scraping - Críticas de Filmes (AdoroCinema)
 
